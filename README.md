@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌐 CulturaSense - AI-Powered Cultural Sensitivity & Adaptation Agent
 
 CulturaSense is an AI Agent system built with [AutoGen](https://github.com/microsoft/autogen), designed for businesses and teams to detect cultural risks and rewrite content for global adaptation.  
@@ -53,3 +54,6 @@ python -m streamlit run app.py
 
 # test in http://localhost:8501
 ```
+=======
+# AI-Agent
+>>>>>>> 6711083 (Initial commit)
