@@ -1,3 +1,9 @@
+import os
+from dotenv import load_dotenv
+
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
 from schemas.user_input import UserInput
 from agents.critic_agent import critic_agent
 from agents.rewrite_agent import rewrite_agent
