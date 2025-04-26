@@ -70,33 +70,12 @@ with right:
     with st.expander("🎯 Target Segment Settings", expanded=not st.session_state.submitted):
         st.subheader("Target Settings")
 
-        st.session_state.country = st.selectbox("Country/Region", [
-            "Select a country...",
-            "Afghanistan", "Albania", "Algeria", "Argentina", "Australia", "Austria", "Bangladesh",
-            "Belgium", "Brazil", "Bulgaria", "Cambodia", "Canada", "Chile", "China", "Colombia",
-            "Croatia", "Czech Republic", "Denmark", "Dominican Republic", "Egypt", "Estonia",
-            "Finland", "France", "Germany", "Ghana", "Greece", "Hong Kong", "Hungary", "Iceland",
-            "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Japan", "Jordan",
-            "Kazakhstan", "Kenya", "Kuwait", "Latvia", "Lebanon", "Lithuania", "Luxembourg",
-            "Malaysia", "Mexico", "Morocco", "Myanmar", "Nepal", "Netherlands", "New Zealand",
-            "Nigeria", "Norway", "Pakistan", "Peru", "Philippines", "Poland", "Portugal", "Qatar",
-            "Romania", "Russia", "Saudi Arabia", "Serbia", "Singapore", "Slovakia", "Slovenia",
-            "South Africa", "South Korea", "Spain", "Sri Lanka", "Sweden", "Switzerland", "Taiwan",
-            "Thailand", "Tunisia", "Turkey", "Ukraine", "United Arab Emirates", "United Kingdom",
-            "United States", "Uruguay", "Uzbekistan", "Venezuela", "Vietnam"], key="country_select")
-        st.session_state.language = st.selectbox("Language", [
-            "Select a language...",
-            "Afrikaans", "Arabic", "Bengali", "Bulgarian", "Burmese", "Chinese", "Croatian",
-            "Czech", "Danish", "Dutch", "English", "Estonian", "Filipino", "Finnish", "French",
-            "German", "Greek", "Hebrew", "Hindi", "Hungarian", "Icelandic", "Indonesian",
-            "Italian", "Japanese", "Kazakh", "Korean", "Latvian", "Lithuanian", "Malay",
-            "Nepali", "Norwegian", "Persian", "Polish", "Portuguese", "Romanian", "Russian",
-            "Serbian", "Slovak", "Slovenian", "Spanish", "Swahili", "Swedish", "Tamil", "Thai",
-            "Turkish", "Ukrainian", "Urdu", "Uzbek", "Vietnamese"], key="language_select")
-        st.session_state.platform = st.selectbox("Platform", ["Select a platform...", "Amazon", "Shopee", "Shopify", "TikTok", "Instagram"], key="platform_select")
+        st.session_state.country = st.selectbox("Country/Region", ["USA", "Indonesia", "Saudi Arabia"], key="country_select")
+        st.session_state.language = st.selectbox("Language", ["English(America)", "Indonesian", "Arabic"], key="language_select")
+        st.session_state.platform = st.selectbox("Platform", ["Amazon", "Shopee", "Shopify", "TikTok", "Instagram"], key="platform_select")
         st.session_state.age = st.number_input("Age", min_value=0, max_value=100, value=25, step=1, key="age_input")
-        st.session_state.gender = st.selectbox("Gender", ["Select a gender...","Female","Male","Other"], key="gender_select")
-        st.session_state.income_level = st.selectbox("Income Level", ["Select a income level...", "Low Income","Lower-Middle Income","Middle Income","Upper-Middle Income","High Income","Affluent"], key="income_level_select")
+        st.session_state.gender = st.selectbox("Gender", ["male", "female", "other"], key="gender_select")
+        st.session_state.income_level = st.selectbox("Income Level", ["low", "middle", "high"], key="income_level_select")
         st.session_state.religion = st.text_input("Religion (Optional)", key="religion_input")
         st.session_state.sensitive_contributors = st.text_area("Sensitive Contributors (Optional)", key="sensitive_contributors_input")
 

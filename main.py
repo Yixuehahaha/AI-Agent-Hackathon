@@ -1,6 +1,17 @@
 from schemas.user_input import UserInput
 from agents.critic_agent import critic_agent
 from agents.rewrite_agent import rewrite_agent
+from fastapi import FastAPI, HTTPException
+
+app = FastAPI()
+
+@app.post("/cultura")
+async def cultura_handler(user_input: UserInput):
+    try:
+        result = run_pipeline(user_input)  # Service层调用
+        return {"result": result}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 def run_pipeline(user_input: UserInput) -> dict:
     """Run CulturaSense full pipeline from user input to critique and rewrite."""

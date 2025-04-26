@@ -1,4 +1,3 @@
-# AI-Agent
 # 🌐 CulturaSense - AI-Powered Cultural Sensitivity & Adaptation Agent
 
 CulturaSense is an AI Agent system built with [AutoGen](https://github.com/microsoft/autogen), designed for businesses and teams to detect cultural risks and rewrite content for global adaptation.  
@@ -27,9 +26,30 @@ git clone https://github.com/Ethan215/AI-Agent.git
 ```bash
 pip install -r requirements.txt
 ```
-
-### 3. Run the AI Agent
+### 3. Install AutoGen and OPENAI
+'''
+pip install "pyautogen[openai]" --user
+'''
+### 4. Run the AI Agent(Optional)
 ```bash
 python main.py
 ```
 
+### 5. FastAPI
+```bash
+pip install uvicorn --user  
+
+python -m uvicorn main:app --reload 
+
+# test in http://127.0.0.1:8000/docs
+```
+### 6. Frontend
+```bash
+pip install streamlit --user 
+
+cd frontend
+
+python -m streamlit run app.py
+
+# test in http://localhost:8501
+```
