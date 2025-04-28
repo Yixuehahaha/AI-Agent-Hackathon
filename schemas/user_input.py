@@ -4,8 +4,8 @@ from typing import Optional, List
 class UserInput(BaseModel):
     # Core content submitted by user
     text: Optional[str] = Field(None, description="Original textual content, optional")
-    image_path: Optional[str] = Field(None, description="Path to uploaded image")
-    pdf_path: Optional[str] = Field(None, description="Path to uploaded PDF file")
+    image_file: Optional[bytes] = Field(None, description="Uploaded image file content (bytes)")
+    pdf_file: Optional[bytes] = Field(None, description="Uploaded PDF file content (bytes)")
 
     # Geolocation and language context
     country: str = Field(..., description="Target country or region")
@@ -18,6 +18,7 @@ class UserInput(BaseModel):
     income_level: Optional[str] = Field(None, description="Income level")
     religion: Optional[str] = Field(None, description="Religious affiliation")
     disability_status: Optional[bool] = Field(False, description="Whether the user has a disability")
+    image_hint: Optional[str] = Field(None, description="Optional user-provided hint about image content")
 
     # Cultural sensitivity input
     sensitive_contributors: Optional[str] = Field(None, description="Content or audience characteristics that require cultural sensitivity")

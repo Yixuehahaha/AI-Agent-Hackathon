@@ -53,3 +53,12 @@ python -m streamlit run app.py
 
 # test in http://localhost:8501
 ```
+
+### InStall：
+'''bash
+pip install -r requirements.txt
+pip install markdown --user
+
+pip install requests
+
+'''
