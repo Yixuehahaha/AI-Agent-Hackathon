@@ -55,10 +55,11 @@ python -m streamlit run app.py
 ```
 
 ### InStall：
-'''bash
+```bash
 pip install -r requirements.txt
+
 pip install markdown --user
 
 pip install requests
 
-'''
+```
