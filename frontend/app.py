@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+import textwrap
 import markdown as md 
 BACKEND_URL = "http://localhost:8000/cultura"
 
@@ -200,14 +201,32 @@ with right:
         """, unsafe_allow_html=True)
 
         st.header("Suggested Content")
-        render_card_with_markdown(st.session_state.rewritten_text, background_color="#ffffff")
 
-        st.markdown("</div>", unsafe_allow_html=True)
+        # Download rewritten text
+        raw_copy_exists = bool(st.session_state.get("text", "").strip())
 
-        # download
-        st.download_button(
-            label="Download Report",
-            data=f"Critique:\n{full_critique}\n\nRewritten:\n{st.session_state.rewritten_text}",
-            file_name="cultura_report.txt",
-            mime="text/plain"
-        )
+        rewritten_lines = st.session_state.rewritten_text.strip().splitlines()
+        headline_raw = rewritten_lines[0].strip() if rewritten_lines else ""
+        headline_raw = headline_raw.strip('"“”') 
+        reason_lines    = rewritten_lines[1:]
+        reason_paragraph = " ".join([l.split("**Reason for Changes:**")[-1].strip()
+                                    if l.lower().startswith("**reason for changes:**") else l.strip()
+                                    for l in reason_lines])
+
+        if raw_copy_exists:
+            wrapped_headline = textwrap.fill(
+                headline_raw, width=80, initial_indent="    ", subsequent_indent="    "
+            )
+
+            wrapped_reason = textwrap.fill(
+                reason_paragraph, width=90
+            )
+
+            st.subheader("Slogan")
+            st.code(wrapped_headline, language="text") 
+
+            st.subheader("Reason for Changes")
+            st.markdown(wrapped_reason)
+
+        else:
+            st.markdown(st.session_state.rewritten_text)
