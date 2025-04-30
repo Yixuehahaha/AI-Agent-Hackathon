@@ -22,7 +22,7 @@
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Ethan215/AI-Agent.git
+git clone https://github.com/Yixuehahaha/AI-Agent-Hackathon.git
 cd AI-Agent
 ```
 
@@ -40,24 +40,20 @@ AZURE_VISION_ENDPOINT=https://your_endpoint.cognitiveservices.azure.com
 AZURE_VISION_KEY=your_azure_key
 ```
 
----
-
-## 🚀 Usage Options
-
-### Step 1: Run Agents Directly (for CLI testing)
+### 4. Run Agents Directly (for CLI testing)
 
 ```bash
 python main.py
 ```
 
-### Step 2: Launch Backend API (FastAPI)
+### 5. Launch Backend API (FastAPI)
 
 ```bash
 python -m uvicorn main:app --reload
 # Access docs at http://127.0.0.1:8000/docs
 ```
 
-### Step 3: Launch Web Frontend (Streamlit)
+### 6. Launch Web Frontend (Streamlit)
 
 ```bash
 cd frontend
@@ -76,24 +72,6 @@ streamlit run app.py
    - Sends content to CriticAgent → RewriterAgent
    - Returns cultural critique + improved content + CTR/risk estimate
 4. See results in a structured, beautiful frontend UI
-
----
-
-## 🧱 Project Structure
-
-```
-.
-├── main.py                  # FastAPI backend pipeline
-├── app.py                   # Streamlit frontend
-├── agents/
-│   ├── critic_agent.py      # Cultural sensitivity critic agent
-│   └── rewrite_agent.py     # Rewriting agent for adaptation
-├── utils/
-│   └── image_checker.py     # Azure Vision integration
-├── prompts.py               # Prompt templates
-├── llm_config.py            # GPT-4o and API settings
-├── user_input.py            # Pydantic input schema
-```
 
 ---
 
