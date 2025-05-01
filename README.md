@@ -79,3 +79,12 @@ streamlit run app.py
 
 - Built with ❤️ for the [Microsoft AI Agent Hackathon](https://github.com/microsoft/autogen)
 - Inspired by real-world challenges in **global marketing**, **cross-cultural communication**, and **AI adaptation**
+
+## 👥 Project Members
+
+| Name            | Email                        |
+|-----------------|------------------------------|
+| BingHong Ni     | nibinghong826@gmail.com      |
+| Yuehan Zhang    | zhangyuehan1122@gmail.com    |
+| Yixue Chen      | muqing49@163.com             |
+| Wei Hu          | weih25@uw.edu                |
